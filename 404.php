@@ -1,0 +1,1 @@
+<a href="./"><img class="img-responsive chain" width="600px" src="images/404.gif" alt="Error 404 - Pagina no encontrada"/></a>
