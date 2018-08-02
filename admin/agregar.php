@@ -1,5 +1,7 @@
 <?php
-
+	session_start();
+	if (!isset($_SESSION["usuario"])) header("location: ../?p=ingreso");
+	
 	if ($_SERVER ["REQUEST_METHOD"] == "POST") {
 		//ACA DEBERA PROCESAR LOS DATOS
 		include "db.php";

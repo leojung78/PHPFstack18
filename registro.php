@@ -4,9 +4,13 @@
 		
 		require "admin/usuario.php";
 
+		//ACA VALIDAR LOS CAMPOS, QUE NO ESTEN VAVIOS, Y QUE CUMPLAN OTRAS CARACTERISTICAS.
+
 		$datos = array (
-			"Email" => $_POST ["email"],
-			"Pass"	=> $_POST ["pass"]
+			"Nombre" 	=> $_POST ["nombre"],
+			"Apellido" 	=> $_POST ["apellido"],
+			"Email" 	=> $_POST ["email"],
+			"Pass"		=> $_POST ["pass"]
 		);
 
 		crearUsuario($datos);

@@ -1,4 +1,7 @@
 <?php
+	session_start();
+	if (!isset($_SESSION["usuario"])) header("location: ../?p=ingreso");
+
 	require 'db.php';
 
 	include "../header.php";
@@ -7,8 +10,8 @@
 ?>
 <div class="container">
 	<cite>
-		Bienvenido Cosme Fulanito
-		<a href="#" style="float:right">[x] Cerrar sesion</a>
+		Bienvenido <?php echo $_SESSION ["usuario"]["nombre"] . ", " . $_SESSION ["usuario"]["apellido"] ?>
+		<a href="admin/usuario.php?accion=cerrar" style="float:right">[x] Cerrar sesion</a>
 	</cite>
 
 	<h1>Listado de Productos</h1>

@@ -1,8 +1,30 @@
+<?php
+	
+	session_start();
+	if (isset($_SESSION["usuario"])) header("location: admin/index.php");
+
+	if ($_SERVER ["REQUEST_METHOD"] == "POST") {
+		
+		require "admin/usuario.php";
+
+		//ACA VALIDAMOS LOS DATOS INGRESADOS DESDE EL FORMULARIO
+		//.......
+
+		$datos = array (
+			"Email" 	=> $_POST ["email"],
+			"Pass"		=> $_POST ["pass"]
+		);
+
+		iniciarSesion($datos);
+
+	} else {
+
+?>
 <section id="page">
 	<div class="account_grid">
 		<div class="login-right">
 			<h3>INGRESO DE USUARIO</h3>
-			<form action="#" method="post" id="formLogin">
+			<form method="post" id="formLogin">
 				<div>
 					<span>E-Mail:</span>
 					<input type="text" name="email" id="email">
@@ -27,8 +49,6 @@
 </section>
 <div class="clearfix"></div>
 
-<script>
-	
-
-
-</script>
+<?php
+}
+?>
